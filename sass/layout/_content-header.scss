@@ -1,0 +1,36 @@
+/** Getting to know Flexbox and setting columns to be equal  **/
+.site-header {
+  display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    background-color: $color__background-header-footer;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    top:0;
+}
+
+
+.site-header  > [class*='col-'] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.site-branding {float: left;}
+.site-branding p, .site-description p,.initial-title p {text-align: center; margin: 0; line-height: 1}
+.site-branding p a, .site-branding p {color:$color__text-reverse; font-family:$font__secondary; text-decoration: none; }
+
+.site-title {font-size:2.2em}
+.initial-title {font-size:1.38em; letter-spacing: 10px; display: none;}
+.site-description {font-size:1.48em}
