@@ -9,27 +9,52 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		
-	</header><!-- .entry-header -->
+<article id="post-<?php the_ID(); ?> fsvs-body' <?php post_class(); ?>>
 
-	<div class="entry-content">
+
+	<div id="fsvs-body">
 		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'dsgreve' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dsgreve' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php dsgreve_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+			/** hold for new bground
+			<div class="slide" style="background-image: url('<?php the_field('page_header_background'); ?>')">
+			**/
+			?>
+			**/
+			<div class="slide">
+					<?php the_field('page_header'); ?>
+			</div>
+			<!-- End Slide One-->
+			<div class="slide">
+				<h2>Recent Work</h2>
+			</div>
+			<!-- End Slide Two-->
+			<div class="slide">
+				<h2>Recent Articles</h2>
+			</div>
+			<!-- End Slide 3-->
+	</div>
 </article><!-- #post-## -->
+<footer class="entry-footer">
+	<?php dsgreve_entry_footer(); ?>
+</footer><!-- .entry-footer -->
+<script>
+jQuery(document).ready(function($){
+		var slider = $.fn.fsvs({
+				autoPlay            : false,
+				speed               : 1000,
+				bodyID              : 'fsvs-body',
+				selector            : '> .slide',
+				mouseSwipeDisance   : 40,
+				afterSlide          : function(){},
+				beforeSlide         : function(){},
+				endSlide            : function(){},
+				mouseWheelEvents    : true,
+				mouseWheelDelay     : false,
+				mouseDragEvents     : true,
+				touchEvents         : true,
+				arrowKeyEvents      : true,
+				pagination          : true,
+				nthClasses          : 2,
+				detectHash          : true
+		});
+});
+</script>

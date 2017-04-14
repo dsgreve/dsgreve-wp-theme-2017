@@ -1,14 +1,19 @@
 jQuery(document).ready(function($) {
 //
+
+
   var $document = $(document),
       $element = $('#page'),
       className = 'hasScrolled';
-  $document.scroll(function(){
+      $document.scroll(function(){
+/*** Hold for further reaserch conflicts with fsvs
+
     if ($document.scrollTop() >= 60) {
       $('.site-header').animate({
          top: "-4"
        }, 1000, function(){
       });
+
       $('.site-description').css('display','none');
       $('.site-title').css('display','none');
       $('.initial-title').css('display','block');
@@ -23,7 +28,7 @@ jQuery(document).ready(function($) {
       $('.site-title').css('display','block');
     }
   });
-
+***/
   //HOMEPAGE TEXT ROTATE
   var divs = $('span[class^="hpRotate-"]').hide(),
       i = 0;

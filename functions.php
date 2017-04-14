@@ -110,6 +110,13 @@ function dsgreve_scripts() {
 
 	wp_enqueue_style( 'dsgreve-style', get_stylesheet_uri() );
 
+	//Homepage only styling
+	if ( is_page( 'home-page' ) ) {
+    wp_enqueue_style('dsgreve-fsvs', get_template_directory_uri() . '/hp-style.css', array(), true);
+  }
+
+	wp_enqueue_style( 'dsgreve-homepage-style', get_stylesheet_uri() );
+
 	// Add Google fonts
   wp_enqueue_style('dsgreve-google-fonts','https://fonts.googleapis.com/css?family=Inconsolata:400,700');
 
@@ -121,8 +128,14 @@ function dsgreve_scripts() {
 
 	// ADD Custom JS
 	wp_enqueue_script('dsgreve-dsg-script', get_template_directory_uri() . '/js/dsg-script.js', array(), true);
+
+	// ADD FSVS JS
+	if ( is_page( 'home-page' ) ) {
+    wp_enqueue_script('dsgreve-fsvs', get_template_directory_uri() . '/js/fsvs.js', array(), true);
+  }
+
   // Add Boootstrap js CDN
-  wp_enqueue_script('dsgeve-bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', array('jquery'), true);
+  wp_enqueue_script('dsgreve-bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', array('jquery'), true);
 
 	wp_enqueue_script( 'dsgreve-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
