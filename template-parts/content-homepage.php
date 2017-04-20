@@ -15,20 +15,20 @@
 	<div id="fsvs-body">
 		<?php
 			/** hold for new bground
-			<div class="slide" style="background-image: url('<?php the_field('page_header_background'); ?>')">
+			<div class="slide" style="background-image: url('<?php the_field('hp_slide_one_bg'); ?>')">
 			**/
 			?>
 			**/
 			<div class="slide">
-					<?php the_field('page_header'); ?>
+					<?php the_field('hp_slide_one'); ?>
 			</div>
 			<!-- End Slide One-->
 			<div class="slide">
-				<h2>Recent Work</h2>
+				<?php the_field('hp_slide_two'); ?>
 			</div>
 			<!-- End Slide Two-->
 			<div class="slide">
-				<h2>Recent Articles</h2>
+				<?php the_field('hp_slide_three'); ?>
 			</div>
 			<!-- End Slide 3-->
 	</div>
