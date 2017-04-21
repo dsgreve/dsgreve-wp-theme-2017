@@ -38,14 +38,14 @@ html.fsvs {
       margin: 0 0 2px 0;
       cursor: pointer; }
       html.fsvs #fsvs-pagination li > span {
-        border-radius: 100%;
+        border-radius: 0%;
         width: 22px;
         height: 22px;
         line-height: 22px;
         border: 1px solid white;
         display: block; }
         html.fsvs #fsvs-pagination li > span > span {
-          border-radius: 100%;
+          border-radius: 0%;
           width: 12px;
           height: 12px;
           line-height: 12px;
@@ -63,7 +63,59 @@ html.fsvs .slide {padding-top: 90px; }
   .nth-class-1 {background-color: #fd535b;color:#FFF !important;}
   .nth-class-2 {background-color: #3c3e47;}
 
-.slide h1{font-size: 10vw;line-height: 1.2; color:#fff; text-align:right; margin-right:2.5em;}
+.slide h1{
+  font-size: 12vw;
+  line-height: 1;
+  color:#fff;
+  text-align:right;
+  margin-right:2.2em;
+}
+.slide h2 span {
+  box-shadow: 1px 1px 1px #333;
+}
+.slide h2 {text-align: center;
+  line-height: 2rem;
+  /* Safari */
+  -webkit-transform: rotate(5deg);
+  /* Firefox */
+  -moz-transform: rotate(5deg);
+  /* IE */
+  -ms-transform: rotate(5deg);
+  /* Opera */
+  -o-transform: rotate(5deg);
+}
+.slide h2 span.titleWrapTwo {
+  background: #629E9C;
+  padding: 8px 15px;
+  display: inline-block;
+  -webkit-transform: skew(5deg);
+   -moz-transform: skew(5deg);
+     -o-transform: skew(5deg);
+  /* Safari */
+  -webkit-transform: rotate(3deg);
+  /* Firefox */
+  -moz-transform: rotate(3deg);
+  /* IE */
+  -ms-transform: rotate(3deg);
+  /* Opera */
+  -o-transform: rotate(3deg);
+
+}
+
+.slide h2 span.titleWrapOne {
+  background: #FFF;
+  padding: 6px 9px;
+  display: inline-block;
+  clip-path: polygon(0 0, 94% 0, 100% 100%, 13% 100%);
+  /* Safari */
+  -webkit-transform: rotate(-5deg);
+  /* Firefox */
+  -moz-transform: rotate(-5deg);
+  /* IE */
+  -ms-transform: rotate(-5deg);
+  /* Opera */
+  -o-transform: rotate(-5deg);
+}
 .nth-class-1 h2 {color:#3c3e47;}
   .site-footer {
       position: fixed;
@@ -75,8 +127,13 @@ html.fsvs .slide {padding-top: 90px; }
   .slide ul {
     list-style-type: none;
     text-align: center;
-    font-size:3.5vw;
+    font-size:6vw;
+    margin:0;
+    padding:0
   }
+    .slide ul li{
+      margin:10px 0;
+    }
   /* Custom, iPhone Retina */
    @media only screen and (min-width : 320px) {
 
@@ -89,18 +146,31 @@ html.fsvs .slide {padding-top: 90px; }
 
    /* Small Devices, Tablets */
    @media only screen and (min-width : 768px) {
-     .slide h1{font-size: 6.8vw;margin-right: 2em;}
-
-     .slide ul li{
-       float:left;
-       margin-left:1em;
+     .slide h1{
+       font-size: 8vw;
+       margin-right: 4.5em;
      }
-      .slide ul li:first-child {margin-left:0;}
+      .slide ul {
+        font-size:5.8vw;
+        margin:-6px 2.2em 0 0;
+     }
+
    }
 
    /* Medium Devices, Desktops */
    @media only screen and (min-width : 992px) {
-
+     .slide h1{
+       font-size: 6.8vw;
+       margin-right: 2em;
+     }
+     .slide ul {
+       font-size:3.5vw
+     }
+     .slide ul li{
+       display: inline-block;
+       margin-left:1em;
+     }
+      .slide ul li:first-child {margin-left:0;}
    }
 
    /* Large Devices, Wide Screens */
